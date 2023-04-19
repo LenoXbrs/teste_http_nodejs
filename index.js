@@ -10,10 +10,16 @@ return res.json({"message":"Hello Wolrd"})
 
 app.get("/blog",(req,res)=>{
     //aparentemente não é bom colocar tag html;
+    
+
     return res.send("<h1 style = 'color:red'> Esse é o meu blog<h1>")
     });
 
-
+    app.get("/ola/:nome",(req,res)=>{
+        var {nome} = req.params;
+       return res.send("Ola " + nome)
+        });
+    
 
 app.listen(3000,function(erro){
     if(erro){
